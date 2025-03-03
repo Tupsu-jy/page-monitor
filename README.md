@@ -2,4 +2,4 @@ start chrome with ```google-chrome --remote-debugging-port=9222 --remote-allow-o
 
 login to outlier. the script does not know how login
 
-run the run.sh or if you are on windows figure out compareble script
+run the run.sh or if you are on windows try running run.sh. It is untested though
