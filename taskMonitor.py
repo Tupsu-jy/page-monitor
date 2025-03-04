@@ -36,5 +36,6 @@ try:
 
         time.sleep(REFRESH_INTERVAL)
         driver.refresh()
+        time.sleep(60)
 finally:
     driver.quit()
