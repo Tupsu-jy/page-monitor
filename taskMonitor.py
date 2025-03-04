@@ -11,7 +11,7 @@ driver = webdriver.Chrome(service=service)
 
 URL = "https://app.outlier.ai/en/expert"
 ELEMENT_XPATH = "//*[contains(text(), 'Start tasking')]"  # Etsi elementti, jossa on teksti "Start tasking"
-REFRESH_INTERVAL = 10*60 # 10 minutes each with 60 seconds
+REFRESH_INTERVAL = 5*60 # 5 minutes each with 60 seconds
 
 # Attach to the already running Chrome session
 options = webdriver.ChromeOptions()
@@ -22,7 +22,6 @@ driver = webdriver.Chrome(options=options)  # Use existing Chrome
 try:
     driver.get(URL)
     while True:
-        time.sleep(REFRESH_INTERVAL)
         try:
             elements = driver.find_elements(By.XPATH, ELEMENT_XPATH)
 
@@ -35,6 +34,7 @@ try:
         except Exception as e:
             print(f"Error: {e}")
 
+        time.sleep(REFRESH_INTERVAL)
         driver.refresh()
 finally:
     driver.quit()
